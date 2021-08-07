@@ -4,11 +4,13 @@
 /checkouts
 pom.xml
 pom.xml.asc
+*.iml
 *.jar
 *.class
 /.lein-*
 /.nrepl-port
 /.dir-locals.el
+/.idea
 /profiles.clj
 /dev/resources/local.edn
 /dev/src/local.clj

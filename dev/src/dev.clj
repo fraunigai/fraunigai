@@ -20,6 +20,9 @@
 (defn test []
   (eftest/run-tests (eftest/find-tests "test")))
 
+(defn build-static []
+  (let []))
+
 (def profiles
   [:duct.profile/dev :duct.profile/local])
 

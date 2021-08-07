@@ -1,20 +1,12 @@
-{:duct.profile/base
- {:duct.core/project-ns fraunigai
+{:duct.profile/base    {:duct.core/project-ns   fraunigai
+                        :duct.router/ataraxy    {:routes {[:get "/"] [:fraunigai.handler/main]}}
+                        :fraunigai.handler/main {:db #ig/ref :duct.database/sql}}
 
-  :duct.router/ataraxy
-  {:routes {[:get "/example"] [:fraunigai.handler/example]}}
+ :duct.profile/dev     #duct/include "dev"
+ :duct.profile/local   #duct/include {"local"}
+ :duct.profile/prod    {}
 
-  :fraunigai.handler/example
-  {:db #ig/ref :duct.database/sql}}
-
- :duct.profile/dev   #duct/include "dev"
- :duct.profile/local #duct/include "local"
- :duct.profile/prod  {}
-
- :duct.module/logging {}
- :duct.module/cljs
- {:main fraunigai.client}
- :duct.module/sql
- {}
- :duct.module.web/site
- {}}
+ :duct.module/logging  {}
+ :duct.module/cljs     {:main fraunigai.client}
+ :duct.module/sql      {}
+ :duct.module.web/site {}}

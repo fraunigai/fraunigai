@@ -6,4 +6,4 @@
 
 (defmethod ig/init-key :fraunigai.handler/example [_ options]
   (fn [{[_] :ataraxy/result}]
-    [::response/ok (io/resource "fraunigai/handler/example/example.html")]))
+    [::response/ok (io/resource "fraunigai/handler/example/main.html")]))

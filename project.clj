@@ -1,5 +1,5 @@
 (defproject fraunigai "0.1.0-SNAPSHOT"
-  :description "Frau Nigai Web Site"
+  :description "Fraunigai Web Site"
   :url "https://fraunigai.com/"
   :min-lein-version "2.0.0"
   :dependencies [[org.clojure/clojure "1.10.3"]
@@ -13,14 +13,14 @@
   :plugins [[duct/lein-duct "0.12.3"]]
   :main ^:skip-aot fraunigai.main
   :resource-paths ["resources" "target/resources"]
-  :prep-tasks     ["javac" "compile" ["run" ":duct/compiler"]]
-  :middleware     [lein-duct.plugin/middleware]
+  :prep-tasks ["javac" "compile" ["run" ":duct/compiler"]]
+  :middleware [lein-duct.plugin/middleware]
   :profiles
-  {:dev  [:project/dev :profiles/dev]
-   :repl {:prep-tasks   ^:replace ["javac" "compile"]
-          :dependencies [[cider/piggieback "0.5.2"]]
-          :repl-options {:init-ns user, :nrepl-middleware [cider.piggieback/wrap-cljs-repl]}}
-   :uberjar {:aot :all}
+  {:dev          [:project/dev :profiles/dev]
+   :repl         {:prep-tasks   ^:replace ["javac" "compile"]
+                  :dependencies [[cider/piggieback "0.5.2"]]
+                  :repl-options {:init-ns user, :nrepl-middleware [cider.piggieback/wrap-cljs-repl]}}
+   :uberjar      {:aot :all}
    :profiles/dev {}
    :project/dev  {:source-paths   ["dev/src"]
                   :resource-paths ["dev/resources"]
@@ -28,3 +28,4 @@
                                    [hawk "0.2.11"]
                                    [eftest "0.5.9"]
                                    [kerodon "0.9.1"]]}})
+
